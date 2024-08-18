@@ -1,11 +1,24 @@
-{% extends "base.html" %}
-
-{% block title %}Login{% endblock title %}
+ {% extends "base.html" %}
+ {% block title %}Login{% endblock title %}
 {% block content %}
-<h3>Login</h3>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Login</button><a href="{% url "signup" %}">Create Account</a><a href="{% url "password_reset" %}">Reset Password</a>
-</form>
+<div id="login">
+  <div class="container">
+    <h3 class="text-center text-white pt-5">Login form</h3>
+      <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+              <div id="login-box" class="col-md-12">
+                  <form action="" method="POST" class="form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                      <button type="submit" class="text-dark btn btn-info btn-md">Login</button>
+                      <a href="{% url "signup" %}" class="text-dark btn btn-primary btn-md">Register here</a>
+                      <a href="" class="text-dark btn btn-secondary btn-md">Forgot Password</a>
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 {% endblock content %}

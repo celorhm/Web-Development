@@ -1,0 +1,14 @@
+.container {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  background-color: #4495b4;
+  padding: 10px;
+    
+  }
+  .container #login-row{
+      margin-left: 100px;
+  }
+  .container form{
+    padding: 20px;
+  }

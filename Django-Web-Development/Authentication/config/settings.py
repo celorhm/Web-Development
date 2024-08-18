@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Party Apps
+    'bootstrap5',
+    'crispy_forms',
+    # Local Apps
     'accounts.apps.AccountsConfig'
 ]
 
@@ -118,12 +122,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR /'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# user authentication configurations
 AUTH_USER_MODEL = 'accounts.UserProfile'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+# email configurations
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# crispy forms configurations
+CRISPY_FORMS_TAGS = 'bootstrap5'
+CRISPY_FORMS_TEMPLATES = 'bootstrap5'
