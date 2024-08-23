@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>{{ article.title }}</h3>
+    <p>
+        {{ article.content }}
+    </p>
+    <a href="{% url "articles:article-update" article.id %}">Update</a> <a href="{% url "articles:article-delete" article.id %}">Delete</a>
+    <hr>
+    <h4>Comments</h4>
+    <br>
+    <hr>
+    <div>
+        <ul>
+            {% for comment in article.comment_set.all %}
+                <li>{{ comment.comment }}</li>
+            {% empty %}
+                <p>No comments added on this article.</p>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="comment">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button>Add Comment</button>
+        </form>
+    </div>
+{% endblock content %}
