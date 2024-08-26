@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} {{ post.title }}{% endblock %}
+
+{% block content %} 
+    <h2>{{ post.title }}</h2>
+    <p>
+        {{ post.content }}
+    </p>
+
+    <div>
+        <a href="{% url "posts:post-update" post.id %}" class="btn btn-secondary btn-sm">Update</a> <a href="{% url "posts:post-delete" post.id %}" class="btn btn-danger btn-sm">Delete</a>
+    </div>
+{% endblock %}

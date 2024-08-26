@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} {{ post.title }}{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %} 
+    <h2>Update Post</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div>
+            <button class="btn btn-primary btn-sm">Update Post</button>
+            <a href="{% url "posts:post-detail" post.id %}"class="btn btn-warning btn-sm">Cancel</a>
+        </div>
+    </form>
+
+{% endblock %}

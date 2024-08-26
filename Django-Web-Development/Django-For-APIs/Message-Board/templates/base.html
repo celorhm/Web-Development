@@ -1,0 +1,36 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% bootstrap_css %}
+</head>
+<body >
+    {% if user.is_authenticated %}
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="navbar-nav">
+            <a href="{% url "posts:post-list" %}" class="nav-link">Home</a>
+          </div>
+          <div class="d-flex me-4 dropdown">
+            <a href=""class="dropdown-item nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
+            <ul class="dropdown-menu dropdown-menu-end me-2">
+                <li class="dropdown-item"><a href="{% url "accounts:profile-page" %}">Profile</a></li>
+                <li class="dropdown-item">
+                    <form action="{% url "logout" %}" method="post"> {% csrf_token %}<button class="nav-link">Logout</button></form>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    {% endif %}
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+    
+</body>
+{% bootstrap_javascript %}
+</html>
+

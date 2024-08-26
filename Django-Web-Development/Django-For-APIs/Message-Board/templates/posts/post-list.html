@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %} 
+
+
+   <h2>Posts</h2>
+   <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for post in posts %}
+
+    
+        <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+              </div>
+              <div class="card-footer">
+                <a href="{% url "posts:post-detail" post.id %}" class="btn btn-info btn-sm">View</a>
+                <small class="text-body-secondary">Added by {{ post.author }}</small>
+              </div>              
+            </div>
+        </div>    
+    
+
+    {% empty %}
+
+        <p>No posts available</p>
+
+   {% endfor %}
+</div>
+<br>
+
+   <a href="{% url "posts:post-create" %} " class="btn btn-outline-secondary btn-sm">Add Post</a>
+
+   
+
+{% endblock %}
