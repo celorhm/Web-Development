@@ -20,6 +20,8 @@ virtualenv = "==20.26.3"
 pipdeptree = "*"
 crispy-bootstrap5 = "*"
 django-cors-headers = "*"
+dj-rest-auth = "*"
+django-allauth = "*"
 
 [dev-packages]
 

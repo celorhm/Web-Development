@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "70c8c17b628ba918625789d3ab3781518d4ef4d68de3c5126cbd8a12d07087ec"
+            "sha256": "1675646683aa5f85cfd21192eb0c2aae904d8fae2b88fdcd05ad08b66002e8fe"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -51,6 +51,14 @@
             "index": "pypi",
             "version": "==0.3.8"
         },
+        "dj-rest-auth": {
+            "hashes": [
+                "sha256:760b45f3a07cd6182e6a20fe07d0c55230c5f950167df724d7914d0dd8c50133"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==6.0.0"
+        },
         "django": {
             "hashes": [
                 "sha256:848a5980e8efb76eea70872fb0e4bc5e371619c70fffbe48e3e1b50b2c09455d",
@@ -59,6 +67,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==5.1"
+        },
+        "django-allauth": {
+            "hashes": [
+                "sha256:713bfc410021140aefae0f04eeaac5d50ebedad7abaf43174670a9ec002c595c"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==64.1.0"
         },
         "django-bootstrap5": {
             "hashes": [
@@ -150,11 +166,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:b208925fcb9f7af924ed2dc04708ea89791e24bde0d3020b27df0e116088b34e",
-                "sha256:d59a3e788ab7e012ab2c4baed1b376da6366883ee20d7a5fc426816e3d7b1193"
+                "sha256:0274581a0037b638b9fc1c6883cc71c0210865aaa76073f7882376b641b84e8f",
+                "sha256:a85e96b8be2b906f3e3e789adec6a9323abf79758ecfa3065bd740d81158b11e"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==73.0.1"
+            "version": "==74.0.0"
         },
         "sqlparse": {
             "hashes": [

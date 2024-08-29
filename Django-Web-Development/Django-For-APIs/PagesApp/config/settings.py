@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0(&5$*n3t8e#dbxw6$&may_bvuhwzgf4=7hsr!m10g5l+w^l2j'
+SECRET_KEY = 'django-insecure-+n#qvc!*$xq#e43a^an_#d#9h^*b4(^w0=u7tt1g=!$m4ba1oz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,24 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-Party Apps
-    'rest_framework',
-    'crispy_forms',
-    'django_bootstrap5',
-    'crispy_bootstrap5',
-    'corsheaders',
-    # Local Apps
-    'posts',
-    'post_api',
-    'accounts',
-    # Authentication Tokens
-    'rest_framework.authtoken'
+    'pages.apps.PagesConfig'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -135,29 +123,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# CRISPY FORMS CONFIGURATION
-CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap5'
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
-
-
-# CONFIGURATION FOR CORS-HEADERS
-CORS_HEADERS = ("https://localhost:3000", "https://localhost:8000")
-
-# CSRF FORMS PROTECTION FOR APIs
-CSRF_TRUSTED_ORIGINS = ["https://localhost:3000"]
-
-
-# AUTHENTICATION CONFIGURATION
-AUTH_USER_MODEL = 'accounts.UserProfile'
-LOGIN_REDIRECT_URL = 'posts:post-list'
-LOGOUT_REDIRECT_URL = 'login'
-
-
-# REST_FRAMEWORK_CONFIGURATIONS
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES" : [
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication"
-    ]
-}
